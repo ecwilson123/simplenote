@@ -1,0 +1,77 @@
+.red {
+  color: #FF4545; }
+
+.link, .link:hover, .link:focus {
+  color: inherit;
+  border-bottom: 1px dotted black;
+  text-decoration: none; }
+
+p.bg-success {
+  padding: 15px; }
+
+#autosave-success {
+  display: none; }
+
+#phtml {
+  border: 1px dotted #FF4545;
+  border-radius: 2px;
+  padding: 5px; }
+
+#preview {
+  display: none; }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px; }
+
+.btn-outline {
+  background: 0;
+  padding: .48750000000000004em 2.5em;
+  border: 1px solid #0f0f0f; }
+  .btn-outline:hover {
+    background-color: #0f0f0f;
+    color: white; }
+
+.btn-outline-red {
+  background: 0;
+  padding: .48750000000000004em 2.5em;
+  border: 1px solid #FF4545;
+  color: #FF4545; }
+  .btn-outline-red:hover {
+    background-color: #FF4545;
+    color: white; }
+
+a.no-dec {
+  color: inherit; }
+  a.no-dec:hover, a.no-dec:focus {
+    text-decoration: none;
+    color: inherit; }
+
+.label-purple {
+  background-color: #A74EFF; }
+
+.label-pink {
+  background-color: #FF70FE; }
+
+.collection {
+  padding: 5px 5px 5px 15px;
+  margin-top: 5px; }
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 60px;
+  margin-top: 10px; }

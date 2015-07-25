@@ -1,0 +1,105 @@
+$light_red: #FF4545;
+$btn_outline_color: #0f0f0f;
+$footer_height: 60px;
+
+// Label colors
+$purple_label_bg: #A74EFF;
+$pink_label_bg: #FF70FE;
+
+.red {
+	color: $light_red;
+}
+
+.link, .link:hover, .link:focus {
+	color: inherit;
+	border-bottom: 1px dotted black;
+	text-decoration: none;
+}
+
+p.bg-success {
+  padding: 15px;
+}
+
+#autosave-success {
+	display: none;
+}
+
+#phtml {
+	border: 1px dotted $light_red;
+	border-radius: 2px;
+	padding: 5px;
+}
+
+#preview {
+	display: none;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 2 * $footer_height;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $footer_height;
+}
+
+.btn-outline {
+	background: 0;
+	padding: .48750000000000004em 2.5em;
+	border: 1px solid $btn_outline_color;
+
+	&:hover {
+		background-color: $btn_outline_color;
+		color: white;
+	}
+}
+
+.btn-outline-red {
+	background: 0;
+	padding: .48750000000000004em 2.5em;
+	border: 1px solid $light_red;
+	color: $light_red;
+
+	&:hover {
+		background-color: $light_red;
+		color: white;
+	}
+}
+
+a.no-dec {
+	color: inherit;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.label-purple {
+	background-color: $purple_label_bg;
+}
+
+.label-pink {
+	background-color: $pink_label_bg;
+}
+
+.collection {
+	padding: 5px 5px 5px 15px;
+	margin-top: 5px;
+}
+
+.pagination {
+	position: absolute;
+	bottom: 0;
+	padding-bottom: $footer_height;
+	margin-top: 10px;
+}
