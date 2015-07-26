@@ -53,3 +53,7 @@ Route::get('auth/logout', [
     'as' => 'logout_path',
     'uses' => 'SessionsController@destroy'
 ]);
+
+Route::resource('notes', 'NotesController');
+
+Route::resource('collections', 'CollectionsController');
