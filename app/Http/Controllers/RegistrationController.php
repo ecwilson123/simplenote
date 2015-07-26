@@ -64,7 +64,7 @@ class RegistrationController extends Controller
             'confirmation_token' => $confirmation_code
         ]);
         
-        \Mail::send('emails.verify', compact('confirmation_token'), function($message){
+        \Mail::send('emails.verify', compact('confirmation_code'), function($message){
             $message->to(Input::get('email'), Input::get('username'))->subject('SimpleNote - Verify your email address');
         });
         
