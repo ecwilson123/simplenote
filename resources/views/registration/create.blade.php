@@ -22,11 +22,11 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('password', 'Password:') !!}
-                    {!! Form::password('password', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::password('password', ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('password_confirmation', 'Confirm password:') !!}
-                    {!! Form::password('password_confirmation', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::submit('Sign Up', ['class' => 'btn btn-primary']) !!}
