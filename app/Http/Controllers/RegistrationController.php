@@ -38,7 +38,7 @@ class RegistrationController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $rules = [
             'username' => 'required|min:6|unique:users',
@@ -47,7 +47,7 @@ class RegistrationController extends Controller
             'password' => 'required|confirmed|min:6'
         ];
         
-        $validator = \Validator::make(Input::only('username', 'name', 'email', 'password', 'password_confirmation'));
+        $validator = \Validator::make(Input::only('username', 'name', 'email', 'password', 'password_confirmation'), $rules);
         
         if($validator->fails())
         {

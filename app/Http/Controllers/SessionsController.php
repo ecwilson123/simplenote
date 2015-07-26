@@ -42,7 +42,7 @@ class SessionsController extends Controller
             'password' => 'required'
         ];
         
-        $validator = \Validator::make(Input::only('username', 'password'));
+        $validator = \Validator::make(Input::only('username', 'password'), $rules);
         
         if ($validator->fails())
         {
