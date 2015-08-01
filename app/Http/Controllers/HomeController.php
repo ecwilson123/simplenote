@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth')
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,78 +21,38 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (!Auth::guest())
-        {
-            return view('home');
+        $user_collections = User::find(Auth::User()->id)->collections;
+        $public_collections = array();
+        $private_collections = array();
+        
+        for ($i = 0; $i < count($user_collections); $i++) {
+            if ($user_collections[$i]->is_public)
+            {
+                array_push($public_collections, $user_collections[$i]);
+            }
+            else
+            {
+                array_push($private_collections, $user_collections[$i]);
+            }
         }
         
-        return redirect()->route('login_path');
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        $user_notes = User::find(Auth::User()->id)->notes;
+        $public_notes = array();
+        $private_notes = array();
+        
+        for ($i = 0; $i < count($user_notes); $i++) {
+            if ($user_notes[$i]->is_public)
+            {
+                array_push($public_notes, $user_notes[$i]);
+            }
+            else
+            {
+                array_push($private_notes, $user_notes[$i]);
+            }
+        }
+        
+        $collections = ['public' => $public_collections, 'private' => $private_collections];
+        $notes = ['public' => $public_notes, 'private' => $private_notes];
+        return view('home', compact('collections', 'notes'));
     }
 }
