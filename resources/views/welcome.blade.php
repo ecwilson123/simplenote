@@ -1,45 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.default')
 
-        <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('content')
+@include('flash::message')
+<div class="jumbotron">
+    <h1>Welcome to SimpleNote!</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in dui auctor, semper nisl a, interdum diam. Praesent aliquam a lectus ac imperdiet. Nulla facilisi. Fusce posuere lectus erat, at aliquam tortor volutpat et. Ut quis dolor augue. Aenean dapibus, elit a efficitur dignissim, dui erat rhoncus orci, sit amet elementum orci neque a purus. Curabitur nisl eros, dignissim quis tempor ac, elementum et tellus. Curabitur erat nisl, pulvinar eu posuere sed, imperdiet eu turpis. </p>
+    <p><a class="btn btn-lg btn-success" href="{{ url('/auth/register') }}" role="button"> Sign up today</a></p>
+</div>
+@endsection
