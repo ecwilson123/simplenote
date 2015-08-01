@@ -2,14 +2,28 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Home
+                <a href="{{ url('/notes') }}" class="link">
+                    Notes
+                </a>
             </div>
-            
             <div class="panel-body">
-                You are logged in!
+                @include('notes.partials._summary')
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="{{ url('/collections') }}" class="link">
+                    Collections
+                </a>
+            </div>
+            <div class="panel-body">
+                @include('collections.partials._summary')
             </div>
         </div>
     </div>
